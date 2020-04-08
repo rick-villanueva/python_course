@@ -505,3 +505,11 @@ while x < 5:
         break
     print(x)
     x = x + 1 
+    
+x = 2 
+
+while x < 10:
+    if x == 7:
+        break
+    print(x)
+    x = x + 1
