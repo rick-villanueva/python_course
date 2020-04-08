@@ -513,5 +513,101 @@ while x < 10:
         break
     print(x)
     x = x + 1
-        
+    
+#Operators 
+for num in range(10):
+    print(num)
+    
+for num in range(0,11,2):
+    print(num)
+    
+list(range(0,11,2))
+
+index_count = 0 
+
+for letter in "abcde":
+    print("At index {} the letter is {}".format(index_count,letter))
+    index_count += 1 
+ 
+index_count = 0    
+word = "abcde"
+
+for letter in word:
+    print(word[index_count])
+    index_count += 1 
+
+word = "abcde"
+
+for item in enumerate(word):
+    print(item)
+    
+    
+word = "abcde"
+
+for index,letter in enumerate(word): #the enumerate function returns the elements of an element 
+    print(index)
+    print(letter)
+    print("\n")
+    
+alist1 = [1,2,3]
+alist2 = ["a","b","c"]
+
+for item in zip(alist1,alist2):
+    print(item)
+    
+alist1 = [1,2,3]
+alist2 = ["a","b","c"]
+alist3 = [100,200,300]
+
+for item in zip(alist1,alist2,alist3):
+    print(item)
+    
+"x" in [1,2,3] #in operator
+
+2 in [1,2,3]
+
+"a" in "a world"
+
+"mykey" in {"mykey":345}
+
+d = {"mykey":345}
+
+345 in d.values()
+345 in d.keys()
+
+numbers = [10,20,30,40,50,100]
+
+min(numbers)
+
+max(numbers)
+
+from random import shuffle #shuffle func (must be imported)
+
+numeros = [1,2,3,4,5,6,7,8,9,10]
+
+shuffle(numeros)
+
+numeros
+
+from random import randint #random integer func 
+
+randint(0,100)
+
+mynum = randint(0,1000)
+
+mynum
+
+input("Enter a number here: ") #input 
+
+result = input("Name: ")
+
+result
+
+fav_num = input("Favorite Number: ")
+
+fav_num #brings back a string
+
+int(fav_num) #to bring back as integer 
+
+float(fav_num) #to bring back as float
 
