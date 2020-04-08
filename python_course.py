@@ -512,10 +512,6 @@ while x < 10:
     if x == 7:
         break
     print(x)
-    x = x + 1    
-    
-print("github")
-print('master')
-
-messi = "messi"
+    x = x + 1
+        
 
