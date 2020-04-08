@@ -513,3 +513,5 @@ while x < 10:
         break
     print(x)
     x = x + 1
+    
+x2 = 5
