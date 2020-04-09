@@ -610,3 +610,54 @@ fav_num #brings back a string
 int(fav_num) #to bring back as integer 
 
 float(fav_num) #to bring back as float
+
+#Lists Comprehensions 
+mystring = "hello"
+
+list1 = []
+
+for letter in mystring:
+    list1.append(letter)
+list1
+
+list1 = [letter for letter in mystring]
+list1
+
+list2 = [x for x in "word"]
+list2
+
+list3 =[num for num in range(0,11)]
+list3
+
+list4 = [num**2 for num in range(0,11)]
+list4
+
+list5 = [x for x in range(0,11) if x%2 == 0]
+list5
+
+list6 = [x**2 for x in range(0,11) if x%2 == 0]
+list6
+
+celsius = [0,10,20,34.5]
+fahrenheit = [((9/5)*temp + 32) for temp in celsius] #list comprehension method 
+fahrenheit
+
+celsius = [0,10,20,34.5]
+fahrenheit = []
+for temp in celsius: #for loop method 
+    fahrenheit.append(((9/5)*temp + 32))
+fahrenheit
+
+#if/else in list comprehension
+results = [x if x%2 == 0 else "odd" for x in range(0,11)]
+results
+
+#nested loops in lists comprehensions
+list7 = [] #regular nested loop
+for x in [2,4,6]:
+    for y in [100,200,300]:
+        list7.append(x*y)       
+list7
+
+list8 = [x*y for x in [2,4,6] for y in [100,200,300]] #nested loop in list comprehension 
+list8
