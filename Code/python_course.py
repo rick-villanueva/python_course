@@ -661,3 +661,9 @@ list7
 
 list8 = [x*y for x in [2,4,6] for y in [100,200,300]] #nested loop in list comprehension 
 list8
+
+list9 = []
+for x in [1,1,2,3,5,8,13]:
+    for y in [1,1,2,3,5,8,13]:
+        list9.append(x*y)
+list9
