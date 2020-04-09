@@ -597,7 +597,7 @@ mynum = randint(0,1000)
 
 mynum
 
-input("Enter a number here: ") #input 
+input 
 
 result = input("Name: ")
 
@@ -610,4 +610,3 @@ fav_num #brings back a string
 int(fav_num) #to bring back as integer 
 
 float(fav_num) #to bring back as float
-
