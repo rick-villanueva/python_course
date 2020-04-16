@@ -124,14 +124,16 @@ def lesser_of_two_evens(a,b):
     else:
         return max(a,b)
     
-lesser_of_two_evens(6,3)
+lesser_of_two_evens(102,98)
 
-#ANIMAL CRACKERS: Write a function takes a two-word string and returns True if both words begin with same letter
+#ANIMAL CRACKERS: Write a function takes a two-word string and returns 
+# True if both words begin with same letter
 def animal_crackers(text):
-    wordlist = text.split()
+    wordlist = text.lower().split()
     return wordlist[0][0] == wordlist[1][0]
     
 animal_crackers('Levelheaded Llama')
+animal_crackers('Crazy kangaroo')
     
 #MAKES TWENTY: Given two integers, return True if the sum of the integers is 20 or if one of the integers is 20. 
 # If not, return False
@@ -159,7 +161,7 @@ def old_macdonald(name):
     else:
         return 'Name is too short!'
     
-old_macdonald('ricardo')
+old_macdonald('mackinsey')
 
 #MASTER YODA: Given a sentence, return a sentence with the words reversed
 def master_yoda(text):
@@ -197,7 +199,8 @@ def has_33(nums):
 
 has_33([1,2,3,5])
 
-#PAPER DOLL: Given a string, return a string where for every character in the original there are three characters
+#PAPER DOLL: Given a string, return a string where for every character in the original 
+# there are three characters
 def paper_doll(text):
     result = ''
     for char in text:
@@ -250,6 +253,7 @@ def summer_69(arr):
 
 summer_69([1, 3, 5])
 summer_69([4, 5, 6, 7, 8, 9])
+summer_69([6,7,8,9])
 
 #SPY GAME: Write a function that takes in a list of integers and returns True if it contains 007 in order
 def spy_game(nums):
@@ -265,6 +269,7 @@ def spy_game(nums):
 spy_game([1,2,4,0,0,7,5])
 spy_game([1,7,2,0,4,5,0])
 spy_game([1,0,2,4,0,5,7])
+spy_game([1,0,0,5,7,8,9,10])
 
 #COUNT PRIMES: Write a function that returns the number of prime numbers that exist up to and including a given number
 def count_primes(num):
@@ -273,18 +278,21 @@ def count_primes(num):
     if num < 2:  # for the case of num = 0 or 1
         return 0
     while x <= num:
-        for y in range(3,x,2):  # test all odd factors up to x-1
-            if x%y == 0:
+        for y in range(3,x,2):  
+        #The list starts at 3 and goes by 2s because 
+        #it avoids any num divisible by 2
+            if x%y == 0: #not a prime, if it finds any value of y for which x mod y is 0, then x it's not prime. 
                 x += 2
                 break
         else:
-            primes.append(x)
+            primes.append(x) #prime number, if there is no y for which x mod y is 0, then it is a prime number
             x += 2
     print(primes)
     return len(primes)
 
-count_primes(105)
+count_primes(20)
 
+#alternative
 def count_primes2(num):
     primes = [2]
     x = 3
@@ -311,3 +319,51 @@ def print_big(letter):
         print(patterns[pattern])
         
 print_big('a')
+
+#*args (arguments) and **kwargs (keyword arguments)
+
+def func1(a,b,c=0,d=0,e=0):
+    #Returns 5% of the sum of a and b
+    return sum((a,b,c,d,e))*0.05
+
+func1(40,60)
+
+def func2(*args): #allows inclusion of as many arguments as desired
+    return sum(args) * 0.05
+    
+func2(40,60,70,100,2)
+
+def func3(**kwargs):
+    print(kwargs)
+    if 'fruit' in kwargs:
+        print('My fruit of choice is {}'.format(kwargs['fruit']))
+    else:
+        print('I did not find any fruit here')
+        
+func3(fruit = 'banana')
+
+def func4(*args,**kwargs):
+    print('I would like {} {}'.format(args[0],kwargs['food']))
+    
+func4(10,20,30,fruit = 'oranges', food = 'eggs', animal = 'dog')
+
+def myfunc2(*args):
+    return [n for n in args if n%2 == 0]
+
+myfunc2(1,2,3,4,5,6)
+
+#function takes a string and returns even letters
+#in upper case and odd in lower case
+
+def myfunc3(x):
+    out = []
+    for i in range(len(x)): 
+        if i%2==0: 
+            out.append(x[i].lower())
+            ## because an index starts at 0
+        else:
+            out.append(x[i].upper())
+    return ''.join(out)
+
+myfunc3('Anthropomorphism')
+
