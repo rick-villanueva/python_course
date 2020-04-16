@@ -311,6 +311,18 @@ def count_primes2(num):
 
 count_primes2(100)
 
+#Is num a prime? 
+def is_prime(num): 
+    x = num 
+    for y in range(3,x):
+        if x%y == 0:
+         return False
+    else:
+        return True
+ 
+is_prime(15)
+
+
 #PRINT BIG: Write a function that takes in a single letter, and returns a 5x5 representation of that letter
 def print_big(letter):
     patterns = {1:'  *  ',2:' * * ',3:'*   *',4:'*****',5:'**** ',6:'   * ',7:' *   ',8:'*   * ',9:'*    '}
