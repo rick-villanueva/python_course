@@ -379,3 +379,111 @@ def myfunc3(x):
 
 myfunc3('Anthropomorphism')
 
+#Map function
+def square(num):
+    return num**2
+
+my_nums = [1,2,3,4,5]
+
+for item in map(square,my_nums):
+    print(item)
+    
+def splicer(mystring):
+    if len(mystring)%2 == 0:
+        return 'EVEN'
+    else:
+        return mystring[0]
+
+names = ['Andy','Eve','Messi']
+
+list(map(splicer,names))
+
+#filter function
+#filters the iterable objects in list 
+# based on a previous defined function condition
+def check_even(num):
+    return num%2 == 0
+
+mynums = [1,2,3,4,5,6]
+
+for n in filter(check_even,mynums):
+    print(n)
+
+list(filter(check_even,mynums)) #other way, create list 
+
+#Lambda expression
+def square(num):
+    result = num**2
+    return result
+
+square(3)
+
+lambda num: num**2 #same as above 
+
+my_nums = [1,2,3,4,5,6]
+list(map(lambda num: num**2,my_nums)) #no need to def func
+
+list(filter(lambda num:num%2 == 0,my_nums))
+
+names
+
+list(map(lambda name:name[0],names))
+
+list(map(lambda name:name[::-1],names))
+
+#Nested statements and scope
+x = 25
+
+def printer():
+    x = 50
+    return x 
+
+print(x)
+print(printer())
+ #LEGB rule
+ #lambda num:num**2 num is a local variable, within a func
+ name = 'This is a global string' #global variable (3rd)
+ 
+ def greet():
+     name = 'Sammy' #enclosing functions (2nd)
+     
+     def hello():
+         name = 'Messi' #Local variable (1st)
+         print('Hello '+ name)
+     hello()
+     
+greet()
+
+x = 50
+
+def func(x):
+    print(f'X is {x}')
+    
+    #Local reassignment
+    x = 200
+    print(f'I just locally changed x to be {x}')
+    
+func(x) #Takes local variable
+print(x) #Takes the global variable
+
+def func1():
+    global x
+    print(f'X is {x}')
+    
+    #Local reassignment on a global variable
+    x = 200
+    print(f'I just locally changed global x to be {x}')
+    
+func1()
+print(x) #changed global value of variable
+
+#Do this
+def func1(x):
+    print(f'X is {x}')
+    
+    #Local reassignment on a global variable
+    x = 200
+    print(f'I just locally changed global x to be {x}')
+    return x
+func1(x)
+x = func1(x)
