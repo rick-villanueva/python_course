@@ -442,17 +442,16 @@ print(x)
 print(printer())
  #LEGB rule
  #lambda num:num**2 num is a local variable, within a func
- name = 'This is a global string' #global variable (3rd)
+ #name = 'This is a global string' #global variable (3rd)
  
- def greet():
-     name = 'Sammy' #enclosing functions (2nd)
+ #def greet():
+     #name = 'Sammy' #enclosing functions (2nd)
      
-     def hello():
-         name = 'Messi' #Local variable (1st)
-         print('Hello '+ name)
-     hello()
-     
-greet()
+     #def hello():
+         #name = 'Messi' #Local variable (1st)
+         #print('Hello '+ name)
+     #hello()
+#greet()
 
 x = 50
 
@@ -487,4 +486,14 @@ def func1(x):
     return x
 func1(x)
 x = func1(x)
+
+#x! equivalent
+def factor_equivalent(numbers):  
+    total = 1
+    for x in numbers:
+        total *= x
+    return total
+
+factor_equivalent([1,2,3,4,5])
+
 
