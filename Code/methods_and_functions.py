@@ -320,7 +320,7 @@ def is_prime(num):
     else:
         return True
  
-is_prime(15)
+is_prime(23)
 
 
 #PRINT BIG: Write a function that takes in a single letter, and returns a 5x5 representation of that letter
@@ -487,3 +487,4 @@ def func1(x):
     return x
 func1(x)
 x = func1(x)
+

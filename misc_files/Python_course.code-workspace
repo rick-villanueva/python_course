@@ -7,7 +7,13 @@
 			"path": "../tests"
 		},
 		{
-			"path": "../Code"
+			"path": "../code"
+		},
+		{
+			"path": "../homework"
 		}
-	]
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
 }
