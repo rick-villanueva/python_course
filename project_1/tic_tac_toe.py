@@ -3,33 +3,35 @@ import random
 # Global variables
 theBoard = [' '] * 10   # a list of empty spaces
 available = [str(num) for num in range(0,10)] # a List Comprehension
-players = [0,'X','O']   # note that players[1] == 'X' and players[-1] == 'O'
-
+players = [0,'X','O'] 
 #Step 1: Write a function that can print out a board. Set up your board as a list, 
 #where each index 1-9 corresponds with a number on a number pad,
 # so you get a 3 by 3 board representation.
-def display_board(x,y):
+def display_board(a,b):
     print('\n'*100)
     print('Available   TIC-TAC-TOE\n'+
            '  moves\n\n  '+
-          x[7]+'|'+x[8]+'|'+x[9]+'        '+y[7]+'|'+y[8]+'|'+y[9]+'\n  '+
+          a[7]+'|'+a[8]+'|'+a[9]+'        '+b[7]+'|'+b[8]+'|'+b[9]+'\n  '+
           '-+-+-        -+-+-\n  '+
-          x[4]+'|'+x[5]+'|'+x[6]+'        '+y[4]+'|'+y[5]+'|'+y[6]+'\n  '+
+          a[4]+'|'+a[5]+'|'+a[6]+'        '+b[4]+'|'+b[5]+'|'+b[6]+'\n  '+
           '-+-+-        -+-+-\n  '+
-          x[1]+'|'+x[2]+'|'+x[3]+'        '+y[1]+'|'+y[2]+'|'+y[3]+'\n')
+          a[1]+'|'+a[2]+'|'+a[3]+'        '+b[1]+'|'+b[2]+'|'+b[3]+'\n')
     
 display_board(available,theBoard)
+
 
 #Step 2: Write a function that can take in a player input and assign their marker as 'X' or 'O'. 
 #Think about using while loops to continually ask until you get a correct answer.
 def player_input():
     marker = ''
-    while not (marker == 'X' or marker == 'O'):
+    while marker != 'X' and marker != 'O':
         marker = input('Player 1: Do you want to be X or O? ').upper()
     if marker == 'X':
         return ('X', 'O')
     else:
         return ('O', 'X')
+    
+player1_marker, player2_marker = player_input()
 
 #Step 3: Write a function that takes in the board list object, a marker ('X' or 'O'),
 # and a desired position (number 1-9) and assigns it to the board.
@@ -38,15 +40,16 @@ def place_marker(avail,board,marker,position):
     avail[position] = ' '
 
 #Step 4: Write a function that takes in a board and a mark (X or O) and then checks to see if that mark has won.
-def win_check(board,marker):
-    return ((board[7] ==  board[8] ==  board[9] == marker) or # across the top
-    (board[4] ==  board[5] ==  board[6] == marker) or # across the middle
-    (board[1] ==  board[2] ==  board[3] == marker) or # across the bottom
-    (board[7] ==  board[4] ==  board[1] == marker) or # down the left
-    (board[8] ==  board[5] ==  board[2] == marker) or # down the middle
-    (board[9] ==  board[6] ==  board[3] == marker) or # down the right 
-    (board[7] ==  board[5] ==  board[3] == marker) or # diagonal
-    (board[9] ==  board[5] ==  board[1] == marker)) # diagonal
+def win_check(board,mark):
+    return 
+    ((board[7] ==  board[8] ==  board[9] == mark) or # across the top
+    (board[4] ==  board[5] ==  board[6] == mark) or # across the middle
+    (board[1] ==  board[2] ==  board[3] == mark) or # across the bottom
+    (board[7] ==  board[4] ==  board[1] == mark) or # down the left
+    (board[8] ==  board[5] ==  board[2] == mark) or # down the middle
+    (board[9] ==  board[6] ==  board[3] == mark) or # down the right 
+    (board[7] ==  board[5] ==  board[3] == mark) or # diagonal
+    (board[9] ==  board[5] ==  board[1] == mark)) # diagonal
 
 #Step 5: Write a function that uses the random module to randomly decide which player goes first.
 def random_player():
@@ -80,9 +83,9 @@ def replay():
 #Run the game 
 while True:
     print('\n'*100)
-    print('Welcome to Tic Tac Toe!')
     toggle = random_player()
     player = players[toggle]
+    print('Welcome to Tic Tac Toe!')
     print('For this round, Player %s will go first!' %(player))
     game_on = True
     input('Hit Enter to continue')    
