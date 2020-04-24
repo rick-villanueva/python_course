@@ -204,7 +204,7 @@ class Line:
         self.coor2 = coor2
     
     def distance(self):
-        x1,y1 = self.coor1
+        x1,y1 = self.coor1 #tuple unpackimg
         x2,y2 = self.coor2
         return ((x2-x1)**2 + (y2-y1)**2)**0.5
     
@@ -213,7 +213,7 @@ class Line:
         x2,y2 = self.coor2
         return (y2-y1)/(x2-x1)
     
-coordinate1 = (7,4)
+coordinate1 = (3,2)
 coordinate2 = (8,10)
 
 li = Line(coordinate1,coordinate2)
@@ -240,3 +240,36 @@ cylinder = Cylinder(2,3)
 
 cylinder.volume()
 cylinder.surface_area()
+
+#Bank Account 
+class Account:
+    
+    def __init__(self,owner,balance):
+        self.owner = owner
+        self.balance = balance
+
+    def __str__(self):
+        return 'Account owner: {} \nAccount balance: ${}'.format(self.owner,self.balance)
+
+    def deposit(self,dp_amt):
+        self.balance += dp_amt
+        print('${} added to your account'.format(dp_amt))
+        print('New account balance = ${}'.format(self.balance))
+
+    def withdraw(self,wd_amt):
+        if self.balance >= wd_amt:
+            self.balance -= wd_amt
+            print('${} withdrawn from your account'.format(wd_amt))
+            print('New account balance = ${}'.format(self.balance))
+        else:
+            print('Funds Unavailable!')
+            
+acct1 = Account('Rick',500)
+
+print(acct1)
+
+acct1.owner
+acct1.balance
+acct1.deposit(500)
+acct1.withdraw(600)
+acct1.withdraw(1200)
