@@ -56,3 +56,21 @@ def ask_for_int():
             print('End of iteration')
         
 ask_for_int()
+
+
+#HW prob
+def ask_squared():
+    
+    while True:
+        try:
+            n = int(input('Input an integer: '))
+        except:
+            print('An error occurred! Please try again!')
+            continue
+        else:
+            break
+            
+        
+    print('Thank you, your number squared is: ',n**2)
+    
+ask_squared()
