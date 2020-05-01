@@ -25,7 +25,7 @@ playing = True
 #Create a Card class
 class Card:
     
-    def __init__(self,suit,rank:
+    def __init__(self,suit,rank):
         self.suit = suit
         self.rank = rank
     
@@ -79,11 +79,11 @@ class Chips:
         self.total = total # This can be set to a default value or supplied by a user input
         self.bet = 0
         
-    def win_bet(self,self.bet):
+    def win_bet(self):
         self.total += self.bet
         
     
-    def lose_bet(self,self.bet):
+    def lose_bet(self):
         self.total -= self.bet
 
 #FUNCTION DEFINITIONS
